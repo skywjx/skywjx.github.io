@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Day01：数据库管理系统MySQL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/13/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL/" class="article-date">
+  <time class="dt-published" datetime="2023-06-13T08:06:42.989Z" itemprop="datePublished">2023-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      MySQL
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库管理系统MySQL"><a href="#数据库管理系统MySQL" class="headerlink" title="数据库管理系统MySQL"></a>数据库管理系统MySQL</h1><h2 id="一、MySQL的介绍"><a href="#一、MySQL的介绍" class="headerlink" title="一、MySQL的介绍"></a>一、MySQL的介绍</h2><h3 id="1、大数据本质"><a href="#1、大数据本质" class="headerlink" title="1、大数据本质"></a>1、大数据本质</h3><ul>
+<li>利用大数据的软件工具对大数据进行处理，从数据中挖掘价值</li>
+</ul>
+<h3 id="2、数据处理流程"><a href="#2、数据处理流程" class="headerlink" title="2、数据处理流程"></a>2、数据处理流程</h3><ul>
+<li>数据采集：将产生各种数据进行统一化的存储</li>
+<li>数据存储：将数据存储数据仓库中</li>
+<li>数据处理：使用SQL开发语言开发程序对数据进行处理</li>
+<li>数据应用：将处理好的结果进行 应用</li>
+</ul>
+<h3 id="3、数据存储及处理"><a href="#3、数据存储及处理" class="headerlink" title="3、数据存储及处理"></a>3、数据存储及处理</h3><ul>
+<li>存储的形式：文件<ul>
+<li>不能满足企业中对于数据处理需求</li>
+</ul>
+</li>
+<li>工作需求：更加规范的数据存储、处理<ul>
+<li>早期：Excel【表格，聚合统计分析，图表】</li>
+<li>问题<ul>
+<li>Excel能承载的数据量大小：MB<ul>
+<li>实际工作中要处理的数据大小：GB</li>
+</ul>
+</li>
+<li>Excel中提供的功能不能满足对数据处理的需求<ul>
+<li>支持开发不同的功能</li>
+<li>开发的方式不太友好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解决<ul>
+<li>数据库管理系统</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4、数据库管理系统"><a href="#4、数据库管理系统" class="headerlink" title="4、数据库管理系统"></a>4、数据库管理系统</h3><ul>
+<li>功能<ul>
+<li>专门用户数据存储、处理数据的工具</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>承载数据量会更大</li>
+<li>更加规范化</li>
+<li>功能更加全面</li>
+<li>开发接口更加优化：SQL</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>网站后台中存储商品信息、订单信息、用户注册 信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="5、MySQL介绍及概念"><a href="#5、MySQL介绍及概念" class="headerlink" title="5、MySQL介绍及概念"></a>5、MySQL介绍及概念</h3><ul>
+<li><p>常见的数据库管理系统</p>
+<ul>
+<li>Oracle：Sun公司商业化数据库产品，性能功能是最强大，但是是收费的商业化产品</li>
+<li>SQL Server：微软公司的产品，受Windows局限性比较大 ，市场占有率并不高，收费</li>
+<li>MySQL：Sun公司的社区产品，体积小，速度快，总体使用的成本比较低</li>
+</ul>
+</li>
+<li><p>MySQL的介绍</p>
+<ul>
+<li>典型的市场占有率是最高的数据库管理系统</li>
+<li>在国内非常广泛<ul>
+<li>所有网站后台的存储</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>概念</p>
+<ul>
+<li><p>数据库管理系统</p>
+<ul>
+<li>专门用户存储和处理数据【结构化数据】的工具</li>
+<li>MySQL就是一个数据库管理系统</li>
+</ul>
+</li>
+<li><p>结构化数据</p>
+<ul>
+<li>例如：表格，行和列是固定的</li>
+<li>行和列是固定的结构，就是数据的格式存在一定的规律</li>
+</ul>
+</li>
+<li><p>数据库：MySQL中用于管理和区分数据表的单元</p>
+<ul>
+<li>database</li>
+<li>理解为对数据进行分类存放的划分</li>
+<li>数据库1：存放用户的数据</li>
+<li>数据库2：存放商品的数据</li>
+<li>数据库3：存放订单的数据</li>
+<li>类似于一个Excel文件<ul>
+<li>人事：人事的Excel文件</li>
+<li>财务：财务的Excel文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>表格：MySQL中用于在数据库中划分数据的单元</p>
+<ul>
+<li>将数据进行更细的划分</li>
+<li>类似于一个Excel文件中会有多张表<ul>
+<li>人事Excel文件 <ul>
+<li>在职人员信息表</li>
+<li>离职人员信息表</li>
+</ul>
+</li>
+<li>财务Excel文件<ul>
+<li>报销信息表</li>
+<li>收入信息表</li>
+<li>报税信息表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据库管理系统与Excel对比</p>
+<table>
+<thead>
+<tr>
+<th align="center">Excel</th>
+<th align="center">MySQL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">一个Excel文件</td>
+<td align="center">一个数据库</td>
+</tr>
+<tr>
+<td align="center">可以有多个Excel的sheet表格</td>
+<td align="center">可以有多张数据表</td>
+</tr>
+<tr>
+<td align="center">表格有行和列</td>
+<td align="center">表格中有行和列</td>
+</tr>
+</tbody></table>
+<ul>
+<li>区别：<ul>
+<li>MySQL功能更加强大</li>
+<li>Excel的开发比较复杂</li>
+<li>MySQL对数据进行处理：SQL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MySQL的使用</p>
+<ul>
+<li>SQL：开发语言，实现数据的存储以及分析管理</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、MySQL及DataGrip部署"><a href="#二、MySQL及DataGrip部署" class="headerlink" title="二、MySQL及DataGrip部署"></a>二、MySQL及DataGrip部署</h2><h3 id="1、MySQL安装"><a href="#1、MySQL安装" class="headerlink" title="1、MySQL安装"></a>1、MySQL安装</h3><ul>
+<li>参考MySQL安装文档实现安装</li>
+</ul>
+<h3 id="2、DataGrip的安装"><a href="#2、DataGrip的安装" class="headerlink" title="2、DataGrip的安装"></a>2、DataGrip的安装</h3><ul>
+<li>功能：使用图形化界面的方式来操作MySQL，进行数据的管理</li>
+<li>参考DataGrip安装文档实现安装</li>
+</ul>
+<h3 id="3、DataGrip连接MySQL"><a href="#3、DataGrip连接MySQL" class="headerlink" title="3、DataGrip连接MySQL"></a>3、DataGrip连接MySQL</h3><ul>
+<li><p>创建一个连接，配置连接MySQL即可</p>
+<ul>
+<li><p>MySQL所在机器的地址和端口</p>
+<ul>
+<li>地址：localhost</li>
+<li>端口：3306</li>
+</ul>
+</li>
+<li><p>MySQL的连接驱动</p>
+<ul>
+<li>下载</li>
+</ul>
+</li>
+<li><p>MySQL用户名和密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户名：root</span><br><span class="line">密码：123456</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MySQL连接地址属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc:mysql://localhost:3306?serverTimezone=UTC</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>参考视频或者课件中的图片实现连接</p>
+</li>
+</ul>
+<h2 id="三、SQL介绍及其规则"><a href="#三、SQL介绍及其规则" class="headerlink" title="三、SQL介绍及其规则"></a>三、SQL介绍及其规则</h2><h3 id="1、SQL的介绍"><a href="#1、SQL的介绍" class="headerlink" title="1、SQL的介绍"></a>1、SQL的介绍</h3><ul>
+<li><p>Struct Qurey Language：结构化查询语言</p>
+</li>
+<li><p>一种编程语言，是一种命令，通过这种命令或者编程语言开发程序来实现数据处理</p>
+<ul>
+<li>MySQL使用SQL命令来管理MySQL中数据</li>
+</ul>
+</li>
+<li><p>SQL是所有RDBMS【关系型数据库管理系统】通用语言</p>
+<ul>
+<li>在语法上有一点点区别</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、SQL的分类"><a href="#2、SQL的分类" class="headerlink" title="2、SQL的分类"></a>2、SQL的分类</h3><ul>
+<li><p>MySQL中的SQL根据不同的功能模块划分不同的命令的分类</p>
+</li>
+<li><p>DDL：数据定义语言</p>
+<ul>
+<li>如何管理我们的数据库和表</li>
+<li>数据库的管理：创建、删除、切换<ul>
+<li>学生信息数据库</li>
+</ul>
+</li>
+<li>表的管理：创建、删除、清空、描述<ul>
+<li>学生表</li>
+<li>成绩表</li>
+<li>学籍表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DML：数据操作语言</p>
+<ul>
+<li>如何管理表中的数据</li>
+<li>对表中数据实现以下功能<ul>
+<li>插入：insert</li>
+<li>更改：update</li>
+<li>删除：delete</li>
+</ul>
+</li>
+<li>例如<ul>
+<li>录入学生信息</li>
+<li>更改学生信息</li>
+<li>删除学生信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DQL：数据查询语言</p>
+<ul>
+<li><p>实现对表中数据的查询和统计分析</p>
+</li>
+<li><p>我们在工作中60%的开发都是开发SQL，有90%都是在开发DQL</p>
+</li>
+<li><p>select</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、SQL的规则"><a href="#3、SQL的规则" class="headerlink" title="3、SQL的规则"></a>3、SQL的规则</h3><ul>
+<li><p>所有的SQL语句都需要以分号来作为结束符，表示这条命令结束了，可以提交运行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;</span><br><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> mysql.user;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="四、SQL分析之DDL"><a href="#四、SQL分析之DDL" class="headerlink" title="四、SQL分析之DDL"></a>四、SQL分析之DDL</h2><h3 id="1、数据库管理"><a href="#1、数据库管理" class="headerlink" title="1、数据库管理"></a>1、数据库管理</h3><ul>
+<li><p>创建</p>
+<ul>
+<li><p>功能：构建一个新的数据库</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database [ if <span class="keyword">not</span> <span class="keyword">exists</span> ] 数据库的名字;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<ul>
+<li><p>创建一个新的数据库叫做：itcast01</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database itcast01;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626202110922.png" alt="image-20200626202110922"></p>
+</li>
+<li><p>创建一个新的数据库：itcast02</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database if <span class="keyword">not</span> <span class="keyword">exists</span> itcast02;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626202312950.png" alt="image-20200626202312950"></p>
+</li>
+<li><p>if not exists：如果不存在的情况下，就创建，如果已经存在就不会创建</p>
+<ul>
+<li><p>功能：为了避免程序报错</p>
+</li>
+<li><p>如果不加：数据库已存在，就会报错</p>
+</li>
+<li><p>如果加了：数据库已存在，不会报错</p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626202616343.png" alt="image-20200626202616343"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>列举</p>
+<ul>
+<li><p>功能：用于列举当前MySQL中所有的数据库名称</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span>  databases;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626201927898.png" alt="image-20200626201927898"></p>
+</li>
+</ul>
+</li>
+<li><p>查看</p>
+<ul>
+<li><p>功能：查看当前所在的数据库</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> database();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626202921195.png" alt="image-20200626202921195"></p>
+<ul>
+<li>null表示我们当前不在任何一个数据库中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>切换</p>
+<ul>
+<li><p>功能：切换到某个数据库中</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名称;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<ul>
+<li><p>切换到itcast01这个数据库中</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use itcast01;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626203115436.png" alt="image-20200626203115436"></p>
+</li>
+<li><p>切换到itcast02这个数据库中</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use itcast02;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626203205537.png" alt="image-20200626203205537"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>删除</p>
+<ul>
+<li><p>功能：删除已存在的一个数据库</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> database [ if <span class="keyword">exists</span> ] 数据库名称;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<ul>
+<li><p>删除itcast01这个数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span>  database itcast01;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626203451258.png" alt="image-20200626203451258"></p>
+</li>
+<li><p>if exists ：如果存在，就删除，如果不存在就不删除</p>
+<ul>
+<li><p>功能：为了避免程序报错</p>
+</li>
+<li><p>如果不加：数据库不存在，删除就会报错</p>
+</li>
+<li><p>如果加了：数据库不存在，删除不会报错</p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626203741535.png" alt="image-20200626203741535"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、数据表管理"><a href="#2、数据表管理" class="headerlink" title="2、数据表管理"></a>2、数据表管理</h3><ul>
+<li><p>数据类型</p>
+<ul>
+<li><p>定义：用于描述表中列的一个数据格式</p>
+</li>
+<li><p>类型：</p>
+<ul>
+<li><p>字符类型：中文、英文或者比较长的数字、日期都可以使用字符串来存储</p>
+<ul>
+<li><p>字符类型是万能的类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;a&#x27;：这就是一个字符，一个数字、一个英文字母、一个符号</span><br><span class="line">&#x27;abc,12344&#x27;：这就是一个字符串，很多个字符构成一个整体</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串表示的数字是不能参与计算的</li>
+</ul>
+</li>
+<li><p>&#x3D;&#x3D;只要是字符类型，就使用varchar（N）&#x3D;&#x3D;</p>
+<ul>
+<li>N表示字符串的长度，只能大不能小</li>
+<li>手机号码：varchar（11）<ul>
+<li>varchar（20）：可以</li>
+<li>varchar(10)：不可以</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数字类型</p>
+<ul>
+<li>整数<ul>
+<li>整形：int</li>
+<li>&#x3D;&#x3D;只要是整数就用：int&#x3D;&#x3D;</li>
+</ul>
+</li>
+<li>小数<ul>
+<li>单精度：float</li>
+<li>双精度：double</li>
+<li>&#x3D;&#x3D;只要是小数就用：double&#x3D;&#x3D;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>日期类型</p>
+<ul>
+<li>日期是一种特殊的格式</li>
+<li>&#x3D;&#x3D;date：用于存储年月日&#x3D;&#x3D;<ul>
+<li>yyyy-MM-dd</li>
+<li>2020-01-01</li>
+</ul>
+</li>
+<li>&#x3D;&#x3D;datetime：用于存储年月日，时分秒&#x3D;&#x3D;<ul>
+<li>yyyy-MM-dd HH:mm:ss</li>
+<li>2020-01-01 12:30:50</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>创建</p>
+<ul>
+<li><p>功能：在某个数据库中创建一张，定义表的结构【表中哪些列以及每一列的类型】</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table [if not exists] [数据库名称.]表的名称(</span><br><span class="line">   col1 type1,</span><br><span class="line">   col2 type2,</span><br><span class="line">   col3 type3,</span><br><span class="line">   ……</span><br><span class="line">   colN typeN</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意事项<ul>
+<li>所有的符号都是英文的，不允许出现中文符号</li>
+<li>除了最后一行就是结尾括号的前一号不用加逗号，其他的都要加逗号</li>
+<li>每一列都要指定对应的类型<ul>
+<li>字符串：varchar(N)</li>
+<li>整数：int</li>
+<li>小数：double</li>
+<li>年月日日期：date</li>
+<li>年月日时分秒：datetime</li>
+</ul>
+</li>
+<li>如果不加数据库名称，表示在当前数据库中创建表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>测试</p>
+<ul>
+<li><p>创建一张学生表student：学生学号、学生姓名、学生年龄、学生性别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists student(</span><br><span class="line">   stuid varchar(10),</span><br><span class="line">   stuname varchar(10),</span><br><span class="line">   age int,</span><br><span class="line">   sex varchar(2)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626211200711.png" alt="image-20200626211200711"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>列举</p>
+<ul>
+<li><p>功能：列举当前数据库中所有的表</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200626210834791.png" alt="image-20200626210834791"></p>
+<p>​	<img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629210140287.png" alt="image-20200629210140287"></p>
+</li>
+</ul>
+</li>
+<li><p>描述</p>
+<ul>
+<li><p>功能：查看一张表的详细的结构信息</p>
+</li>
+<li><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc  [dbname.]tbname;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc student;</span><br><span class="line">desc bigdata.student;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629210418658.png" alt="image-20200629210418658"></p>
+</li>
+</ul>
+</li>
+<li><p>删除</p>
+<ul>
+<li><p>功能：删除一张不需要再使用的表</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table [ if exists ] [dbname.]tbname;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table if exists student;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629211104002.png" alt="image-20200629211104002"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、SQL分析之DML"><a href="#五、SQL分析之DML" class="headerlink" title="五、SQL分析之DML"></a>五、SQL分析之DML</h2><h3 id="1、创建表格"><a href="#1、创建表格" class="headerlink" title="1、创建表格"></a>1、创建表格</h3><ul>
+<li><p>创建一个商品的分类表：category</p>
+<ul>
+<li>分类编号：cid</li>
+<li>分类名称：cname</li>
+</ul>
+</li>
+<li><p>创建语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table category(</span><br><span class="line">  cid varchar(5),</span><br><span class="line">  cname varchar(10)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629212641728.png" alt="image-20200629212641728"></p>
+</li>
+</ul>
+<h3 id="2、插入数据"><a href="#2、插入数据" class="headerlink" title="2、插入数据"></a>2、插入数据</h3><ul>
+<li><p>功能：写入一条数据进入数据表</p>
+</li>
+<li><p>关键字：insert</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into tbname(co11,col2,col3……)  values(value1,value2,value3……);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">insert into category(cid,cname) values(&#x27;c001&#x27;,&#x27;电器&#x27;);</span><br><span class="line">insert into category(cname) values(&#x27;服饰&#x27;);</span><br><span class="line">insert into category(cid,cname) values(null,&#x27;化妆品&#x27;);</span><br><span class="line">insert into category values(&#x27;c002&#x27;,&#x27;书籍&#x27;);</span><br><span class="line">insert into category values(null,&#x27;蔬菜&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629213403110.png" alt="image-20200629213403110"></p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629214132789.png" alt="image-20200629214132789"></p>
+<ul>
+<li><p>查询某张表的所有内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from category;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x3D;&#x3D;注意事项&#x3D;&#x3D;</p>
+<ul>
+<li>所给定的列的名称必须与后面的值一一对应</li>
+<li>给定值的时候，除了数值类型或者null，其他类型必须加上单引号</li>
+<li>给定的值不能超过创建表时定义的长度</li>
+<li>如果要给表中的每一列都赋值，就可以不写列名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、更新数据"><a href="#3、更新数据" class="headerlink" title="3、更新数据"></a>3、更新数据</h3><ul>
+<li><p>功能：修改数据表中的数据</p>
+</li>
+<li><p>关键字：update</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表的名称 set col1 = newValue,col2 = newValue …… [where 条件];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<ul>
+<li><p>需求1：将服饰的分类id更改为c003</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update  category set  cid = &#x27;c003&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629215253675.png" alt="image-20200629215253675"></p>
+<ul>
+<li>上面不能满足我们的需求，因为更改了其他不需要更改的数据</li>
+<li>解决：加上where 条件<ul>
+<li>只有满足where条件的数据才会被更改</li>
+<li>没有指定where条件，就更改所有数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>需求2：将服饰的分类id更改为c004</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update category set cid = &#x27;c004&#x27; where cname = &#x27;服饰&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629215715473.png" alt="image-20200629215715473"></p>
+</li>
+<li><p>需求3：将化妆品的分类id更改为c001，并且将分类名称更改为化妆</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update category set cid=&#x27;c001&#x27;,cname=&#x27;化妆&#x27; where cname = &#x27;化妆品&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629215920737.png" alt="image-20200629215920737"></p>
+</li>
+<li><p>需求4：将所有 c003的分类名称更改为笔记本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update category set cname = &#x27;笔记本&#x27; where cid = &#x27;c003&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629220038167.png" alt="image-20200629220038167"></p>
+</li>
+<li><p>&#x3D;&#x3D;注意：&#x3D;&#x3D;</p>
+<ul>
+<li>更改的列的新的值必须与列的类型相符</li>
+<li>新的值不能超过这一列的长度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4、删除数据"><a href="#4、删除数据" class="headerlink" title="4、删除数据"></a>4、删除数据</h3><ul>
+<li><p>功能：删除数据表中的数据</p>
+</li>
+<li><p>关键字：delete</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表的名称  [where 条件];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果不加where条件，会删除整张表所有的数据</p>
+</li>
+<li><p>where 条件：符合条件的数据将会被删除</p>
+</li>
+<li><p>需求1：删除所有分类名称为笔记本的分类数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from category where cname = &#x27;笔记本&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629221111664.png" alt="image-20200629221111664"></p>
+</li>
+<li><p>需求2：删除分类id不为c001的分类的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from category where cid != &#x27;c001&#x27;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>清空表中所有的数据</p>
+<ul>
+<li><p>delete：用于删除表中的数据，一行一行删除</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from category;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>truncate：用于清空整张表的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate category;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200629221411664.png" alt="image-20200629221411664"></p>
+</li>
+<li><p>区别</p>
+<ul>
+<li>delete：DML命令，一条一条删除</li>
+<li>truncate：DDL命令，类似于将整张表删除，然后重新创建一张一样的空表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、SQL分析之DQL"><a href="#六、SQL分析之DQL" class="headerlink" title="六、SQL分析之DQL"></a>六、SQL分析之DQL</h2><h3 id="1、准备数据"><a href="#1、准备数据" class="headerlink" title="1、准备数据"></a>1、准备数据</h3><ul>
+<li><p>创建测试数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> database if <span class="keyword">exists</span> bigdata;</span><br><span class="line"><span class="keyword">create</span> database bigdata;</span><br><span class="line">use bigdata;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建商品表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> product(</span><br><span class="line"> pid <span class="type">int</span>,</span><br><span class="line"> pname <span class="type">varchar</span>(<span class="number">20</span>),</span><br><span class="line"> price <span class="keyword">double</span>,</span><br><span class="line"> category_id <span class="type">varchar</span>(<span class="number">32</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入商品测试数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">1</span>,<span class="string">&#x27;联想&#x27;</span>,<span class="number">5000</span>,<span class="string">&#x27;c001&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">2</span>,<span class="string">&#x27;海尔&#x27;</span>,<span class="number">3000</span>,<span class="string">&#x27;c001&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">3</span>,<span class="string">&#x27;雷神&#x27;</span>,<span class="number">5000</span>,<span class="string">&#x27;c001&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">4</span>,<span class="string">&#x27;杰克琼斯&#x27;</span>,<span class="number">800</span>,<span class="string">&#x27;c002&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">5</span>,<span class="string">&#x27;真维斯&#x27;</span>,<span class="number">200</span>,<span class="string">&#x27;c002&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">6</span>,<span class="string">&#x27;花花公子&#x27;</span>,<span class="number">440</span>,<span class="string">&#x27;c002&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">7</span>,<span class="string">&#x27;劲霸&#x27;</span>,<span class="number">2000</span>,<span class="string">&#x27;c002&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">8</span>,<span class="string">&#x27;香奈儿&#x27;</span>,<span class="number">800</span>,<span class="string">&#x27;c003&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">9</span>,<span class="string">&#x27;相宜本草&#x27;</span>,<span class="number">200</span>,<span class="string">&#x27;c003&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">10</span>,<span class="string">&#x27;面霸&#x27;</span>,<span class="number">5</span>,<span class="string">&#x27;c003&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">11</span>,<span class="string">&#x27;好想你枣&#x27;</span>,<span class="number">56</span>,<span class="string">&#x27;c004&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">12</span>,<span class="string">&#x27;香飘飘奶茶&#x27;</span>,<span class="number">1</span>,<span class="string">&#x27;c005&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product(pid,pname,price,category_id) <span class="keyword">VALUES</span>(<span class="number">13</span>,<span class="string">&#x27;海澜之家&#x27;</span>,<span class="number">1</span>,<span class="string">&#x27;c002&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建商品分类类：categroy</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> category(</span><br><span class="line">  category_id <span class="type">varchar</span>(<span class="number">10</span>),</span><br><span class="line">  category_name <span class="type">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入商品分类测试数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> category <span class="keyword">values</span>(<span class="string">&#x27;c001&#x27;</span>,<span class="string">&#x27;电脑&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> category <span class="keyword">values</span>(<span class="string">&#x27;c002&#x27;</span>,<span class="string">&#x27;服装&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> category <span class="keyword">values</span>(<span class="string">&#x27;c003&#x27;</span>,<span class="string">&#x27;化妆品&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> category <span class="keyword">values</span>(<span class="string">&#x27;c004&#x27;</span>,<span class="string">&#x27;吃的&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> category <span class="keyword">values</span>(<span class="string">&#x27;c005&#x27;</span>,<span class="string">&#x27;喝的&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2、基本语法"><a href="#2、基本语法" class="headerlink" title="2、基本语法"></a>2、基本语法</h3><ul>
+<li><p>功能：实现对于数据表中的数据的查询、统计分析、处理</p>
+</li>
+<li><p>关键字：select</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">1</span> <span class="keyword">from</span> <span class="number">2</span> <span class="keyword">where</span> <span class="number">3</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="number">4</span> <span class="keyword">having</span> <span class="number">5</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="number">6</span> limit <span class="number">7</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>1：用于决定查询的结果中有哪些列，给定哪些列，结果就会显示这些列</p>
+<ul>
+<li>写列的名字，多列用逗号隔开</li>
+<li>*号代表所有的列</li>
+</ul>
+</li>
+<li><p>2：用于表示查询哪张表，给定表的名字</p>
+</li>
+<li><p>3：条件查询，只有满足条件的数据才会被返回</p>
+<ul>
+<li>不满足条件的数据会被过滤掉，不会在结果中显示</li>
+<li>符合where条件的行才会在结果中显示</li>
+</ul>
+</li>
+<li><p>4：用于实现分组的，将多条数据按照某一列或者多列进行分组，划分到同一组中</p>
+<ul>
+<li>用于实现统计分析</li>
+<li>语法：group by col</li>
+</ul>
+</li>
+<li><p>5：用于实现分组后的条件过滤</p>
+<ul>
+<li>功能类似于where</li>
+<li>满足having后的条件就会出现在结果中</li>
+<li>不满足条件就会被过滤掉</li>
+<li>与where的区别<ul>
+<li>where：分组之前过滤</li>
+<li>having：分组之后过滤</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>6：用于实现将查询的结果按照某一列或者多列进行排序</p>
+<ul>
+<li>order by col  [ asc | desc]</li>
+<li>asc：升序排序</li>
+<li>desc：降序排序</li>
+<li>如果不指定，默认是升序排序</li>
+</ul>
+</li>
+<li><p>7：用于实现分页输出</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、简单查询"><a href="#3、简单查询" class="headerlink" title="3、简单查询"></a>3、简单查询</h3><ul>
+<li><p>查询所有的商品信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702152955689.png" alt="image-20200702152955689"></p>
+</li>
+<li><p>查询所有的商品名称和价格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pname,price from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702153232051.png" alt="image-20200702153232051"></p>
+</li>
+<li><p>查询所有的商品名称和价格，结果的列的名称分别为商品和价格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pname as &#x27;商品&#x27;, price as &#x27;价格&#x27; from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702153554316.png" alt="image-20200702153554316"></p>
+<ul>
+<li>as：用于给列或者表取别名</li>
+</ul>
+</li>
+<li><p>查询所有商品的价格，并去掉重复价格</p>
+<ul>
+<li>查询所有商品价格</li>
+</ul>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702153803436.png" alt="image-20200702153803436"></p>
+<ul>
+<li><p>去掉重复价格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct price from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702153930200.png" alt="image-20200702153930200"></p>
+</li>
+<li><p>distinct：用于对列值进行去重</p>
+</li>
+</ul>
+</li>
+<li><p>将所有商品的价格+10元显示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select price as &#x27;价格&#x27; , price + 10 as &#x27;新价格&#x27; from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702154219464.png" alt="image-20200702154219464"></p>
+<ul>
+<li>直接对数值类型的列进行运算<ul>
+<li>加：+</li>
+<li>减：-</li>
+<li>乘：*</li>
+<li>除：&#x2F;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4、条件查询：where"><a href="#4、条件查询：where" class="headerlink" title="4、条件查询：where"></a>4、条件查询：where</h3><ul>
+<li><p>功能：对于数据行的过滤</p>
+</li>
+<li><p>查询商品名称为“花花公子”的商品所有信息 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where pname = &#x27;花花公子&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702155631783.png" alt="image-20200702155631783"></p>
+</li>
+<li><p>查询价格为800商品  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where price = 800;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702155805675.png" alt="image-20200702155805675"></p>
+</li>
+<li><p>查询价格不是800的所有商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from  product where  price != 800;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702160012180.png" alt="image-20200702160012180"></p>
+</li>
+<li><p>查询商品价格大于60元的所有商品信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where price &gt; 60;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702160137164.png" alt="image-20200702160137164"></p>
+<ul>
+<li><p>等于：&#x3D;</p>
+</li>
+<li><p>不等于：！&#x3D;</p>
+</li>
+<li><p>小于：&lt;</p>
+</li>
+<li><p>大于：&gt;</p>
+</li>
+<li><p>小于等于：&lt;&#x3D;</p>
+</li>
+<li><p>大于等于：&gt;&#x3D;</p>
+</li>
+</ul>
+</li>
+<li><p>查询商品价格在200到1000之间所有商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from product where price &gt;= 200 and price &lt;= 1000;</span><br><span class="line">select * from product where price between 200 and 1000;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702160548070.png" alt="image-20200702160548070"></p>
+<ul>
+<li>and：并列关系，两个条件都要满足</li>
+</ul>
+</li>
+<li><p>查询商品价格是200或800的所有商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where price = 200 or price = 800;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702160828528.png" alt="image-20200702160828528"></p>
+<ul>
+<li>or：或者关系，两个条件满足其中一个即可</li>
+</ul>
+</li>
+<li><p>查询含有’霸’字的所有商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where pname like &#x27;%霸%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702161145607.png" alt="image-20200702161145607"></p>
+<ul>
+<li>%：任意多个字符</li>
+</ul>
+</li>
+<li><p>查询以’香’开头的所有商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where pname like &#x27;香%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702161427047.png" alt="image-20200702161427047"></p>
+</li>
+<li><p>查询第二个字为’想’的所有商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from  product where pname like &#x27;_想%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702161702350.png" alt="image-20200702161702350"></p>
+<ul>
+<li>_：表示一个字符</li>
+</ul>
+</li>
+<li><p>查询没有分类的商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into product values(14,&#x27;weiC 100&#x27;,9.9,null);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702162050786.png" alt="image-20200702162050786"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where category_id is null;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702162218157.png" alt="image-20200702162218157"></p>
+</li>
+<li><p>查询有分类的商品</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where category_id is not null;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702162327329.png" alt="image-20200702162327329"></p>
+</li>
+</ul>
+<h3 id="5、聚合查询"><a href="#5、聚合查询" class="headerlink" title="5、聚合查询"></a>5、聚合查询</h3><ul>
+<li><p>聚合函数</p>
+<ul>
+<li>函数：MySQL为你定义好的功能，你只要调用这个命令就可以实现聚合功能</li>
+<li>MYSQL默认为我们提供的常见的聚合函数<ul>
+<li>count(colname)：统计某一列的行数，统计个数，null不参与统计</li>
+<li>sum（colname）：计算某一列的所有值的和，只能对数值类型求和，如果不是数值，结果为0</li>
+<li>max（colname）：计算某一列的所有值中的最大值</li>
+<li>min（colname）：计算某一列的所有值中的最小值</li>
+<li>avg（colname）：计算某一列的平均值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查询商品的总条数 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(pid) as &#x27;总个数&#x27; from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702201119336.png" alt="image-20200702201119336"></p>
+</li>
+<li><p>查询价格大于200商品的总条数 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(pid) as &#x27;大于200的商品个数&#x27; from product where price &gt; 200;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702201447950.png" alt="image-20200702201447950"></p>
+</li>
+<li><p>查询分类为’c001’的所有商品价格的总和  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(price) as totalPrice from product where category_id = &#x27;c001&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702201649601.png" alt="image-20200702201649601"></p>
+</li>
+<li><p>查询分类为’c002’所有商品的平均价格 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(price) as &#x27;平均价格&#x27; from product where category_id = &#x27;c002&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702201929937.png" alt="image-20200702201929937"></p>
+</li>
+<li><p>查询商品的最大价格和最小价格  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select max(price) as &#x27;最大价格&#x27;,min(price) as &#x27;最小价格&#x27; from product;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702202344072.png" alt="image-20200702202344072"></p>
+</li>
+</ul>
+<h3 id="6、分组查询：gourp-by"><a href="#6、分组查询：gourp-by" class="headerlink" title="6、分组查询：gourp by"></a>6、分组查询：gourp by</h3><ul>
+<li><p>关键字：group by col …… having</p>
+</li>
+<li><p>功能：按照某些列进行分组，对分组后的数据进行处理，一般都会搭配聚合函数使用</p>
+</li>
+<li><p>统计各个分类商品的个数  </p>
+<ul>
+<li><p>分析过程</p>
+<ul>
+<li><p>结果长什么样？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">category_id			个数</span><br><span class="line">c001				3</span><br><span class="line">c002				5</span><br><span class="line">c003				3</span><br><span class="line">c004				2</span><br><span class="line">c005				1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按照什么分组？</p>
+<ul>
+<li>按照category_id进行分组</li>
+</ul>
+</li>
+<li><p>统计每组商品的个数</p>
+<ul>
+<li>count</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select category_id,count(*) as &#x27;个数&#x27; from product group by category_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702203429283.png" alt="image-20200702203429283"></p>
+</li>
+<li><p>统计查询每种分类中的商品的最大价格和最小价格</p>
+<ul>
+<li>分析<ul>
+<li>结果长什么样？<ul>
+<li>三列：分类的id		最大价格			最小价格</li>
+</ul>
+</li>
+<li>按照分类的id进行分组</li>
+<li>统计每个分组内部的最大价格和最小价格</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select  </span><br><span class="line">    category_id,</span><br><span class="line">    max(price) as maxprice,</span><br><span class="line">    min(price) as minprice   </span><br><span class="line">from </span><br><span class="line">    product  </span><br><span class="line">group by </span><br><span class="line">    category_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702203945489.png" alt="image-20200702203945489"></p>
+</li>
+<li><p>统计各个分类商品的个数,且只显示个数大于1的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select category_id,count(*) as &#x27;个数&#x27; from product group by category_id;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>需要对分组后的结果再进行行的过滤</li>
+<li>where：实现对数据行的过滤，指定条件<ul>
+<li>这个需求中不能使用where</li>
+<li>因为where会在group by之前执行，而个数是在分组之后才产生的列</li>
+</ul>
+</li>
+<li>having：实现对数据行的过滤，指定条件，写法与where一致<ul>
+<li>用于分组之后结果数据的过滤</li>
+<li>对分组以后的 结果进行过滤</li>
+</ul>
+</li>
+<li>什么时候用where，什么时候用having<ul>
+<li>你要过滤的条件是分组之前就存在的，还是分组以后才产生的</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select category_id,count(*) as &#x27;个数&#x27; from product group by category_id having count(*) &gt; 1;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702204613303.png" alt="image-20200702204613303"></p>
+</li>
+</ul>
+<h3 id="7、排序查询：order-by"><a href="#7、排序查询：order-by" class="headerlink" title="7、排序查询：order by"></a>7、排序查询：order by</h3><ul>
+<li><p>关键字：order by col…… 【 asc | desc】</p>
+</li>
+<li><p>功能：将结果按照某些列进行升序或者 降序的排序来显示</p>
+<ul>
+<li>默认是升序</li>
+<li>asc：升序</li>
+<li>desc：降序</li>
+</ul>
+</li>
+<li></li>
+<li><p>查询所有商品的信息，并按照价格降序排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product order by  price desc;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702205645391.png" alt="image-20200702205645391"></p>
+</li>
+<li><p>查询所有商品的信息，并按照价格排序(降序)，如果价格相同，以分类排序(降序)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product order by price desc,category_id desc;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702205923524.png" alt="image-20200702205923524"></p>
+</li>
+<li><p>统计各个分类商品的个数 ，并按照个数降序排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> category_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> <span class="string">&#x27;个数&#x27;</span> <span class="keyword">from</span> product <span class="keyword">group</span> <span class="keyword">by</span> category_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702210133787.png" alt="image-20200702210133787"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> category_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> <span class="string">&#x27;个数&#x27;</span> <span class="keyword">from</span> product <span class="keyword">group</span> <span class="keyword">by</span> category_id <span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702210257846.png" alt="image-20200702210257846"></p>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702210324695.png" alt="image-20200702210324695"></p>
+</li>
+</ul>
+<h3 id="8、分页查询：limit"><a href="#8、分页查询：limit" class="headerlink" title="8、分页查询：limit"></a>8、分页查询：limit</h3><ul>
+<li><p>关键字：limit</p>
+</li>
+<li><p>功能：限制输出的结果</p>
+</li>
+<li><p>语法：limit M,N</p>
+<ul>
+<li>M：你想从第M+1条开始显示</li>
+<li>N：显示N条</li>
+<li>显示第一条到第三条<ul>
+<li>M：0</li>
+<li>N：3</li>
+</ul>
+</li>
+<li>显示第9条到第10条<ul>
+<li>M：8</li>
+<li>N：2</li>
+</ul>
+</li>
+<li>如果从第一条开始，M为0，可以省略不写<ul>
+<li>limit N</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查询product表的前5条记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> product limit <span class="number">0</span>,<span class="number">5</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> product limit <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702211351033.png" alt="image-20200702211351033"></p>
+</li>
+<li><p>查询product表的第4条和第5条记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> product limit <span class="number">3</span>,<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>  <img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702211507141.png" alt="image-20200702211507141"></p>
+</li>
+<li><p>查询商品个数最多的分类的前三名</p>
+<ul>
+<li><p>查询所有商品分类的商品个数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> category_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb  <span class="keyword">from</span> product <span class="keyword">group</span> <span class="keyword">by</span> category_id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对上一步做排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> category_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb  <span class="keyword">from</span> product <span class="keyword">group</span> <span class="keyword">by</span> category_id <span class="keyword">order</span> <span class="keyword">by</span> numb <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>limit选择前三名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> category_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb  <span class="keyword">from</span> product <span class="keyword">group</span> <span class="keyword">by</span> category_id <span class="keyword">order</span> <span class="keyword">by</span> numb <span class="keyword">desc</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702211811837.png" alt="image-20200702211811837"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="9、结果保存"><a href="#9、结果保存" class="headerlink" title="9、结果保存"></a>9、结果保存</h3><ul>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表的名称   select……</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>功能：将一条select语句运行的结果写入一张表中</p>
+</li>
+<li><p>注意：结果表的列一定要与Select语句的结果的列要匹配</p>
+<ul>
+<li>列的名称可以不一样</li>
+<li>但是列的类型和个数必须一一对应</li>
+</ul>
+</li>
+<li><p>统计各个分类商品的个数 ，并按照个数降序排序，并将结果进行保存</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  category_id,</span><br><span class="line">  <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  product</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">  category_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">  numb <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702213032264.png" alt="image-20200702213032264"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建一张表用于存储分析的结果</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">result</span> (</span><br><span class="line">  cid <span class="type">varchar</span>(<span class="number">100</span>),</span><br><span class="line">  numb <span class="type">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702213133496.png" alt="image-20200702213133496"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--将分析的结果存储在这张表中</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">result</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">  category_id,</span><br><span class="line">  <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  product</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">  category_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">  numb <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702213315008.png" alt="image-20200702213315008"></p>
+</li>
+</ul>
+<h2 id="七、多表关系与查询"><a href="#七、多表关系与查询" class="headerlink" title="七、多表关系与查询"></a>七、多表关系与查询</h2><h3 id="1、多表关系"><a href="#1、多表关系" class="headerlink" title="1、多表关系"></a>1、多表关系</h3><ul>
+<li>电商数据库<ul>
+<li>用户表<ul>
+<li>用户id、用户名称、用户手机……</li>
+</ul>
+</li>
+<li>商品表<ul>
+<li>商品id、商品名称、商品价格、库存、尺寸……</li>
+</ul>
+</li>
+<li>订单表<ul>
+<li>订单id、用户id、商品id、总金额、支付方式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>员工数据库<ul>
+<li>员工表<ul>
+<li>员工id、员工姓名、员工性别、年龄、部门id……</li>
+</ul>
+</li>
+<li>部门表<ul>
+<li>部门id、部门名称、部门位置、部门领导……</li>
+</ul>
+</li>
+<li>员工和部门之间的关系<ul>
+<li>员工属于某一个部门</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702220547447.png" alt="image-20200702220547447"></p>
+<ul>
+<li>表与表之间通过某些列来实现关联，表现数据之间的关系</li>
+</ul>
+<h3 id="2、join"><a href="#2、join" class="headerlink" title="2、join"></a>2、join</h3><ul>
+<li><p>功能：通过两张表之间关联的列，实现将两张表的列进行合并</p>
+</li>
+<li><p>关键字：A    join B   on  条件</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 查询的两张表的哪些列  from A表  join  B表  on 关联条件;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本质：通过某种列的关系，将两张表的列进行了关联</p>
+</li>
+<li><p>需求1：查询每个商品的名称以及所属分类的名称</p>
+<ul>
+<li><p>分析结果长什么样？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">商品名称			分类名称</span><br><span class="line">联想					电脑</span><br><span class="line">……</span><br><span class="line">weiC 100			 吃的</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>问题：商品名称 属于商品表，分类名称属于分类表</p>
+</li>
+<li><p>关系：分类id：categor_id</p>
+</li>
+<li><p>查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--将商品表与分类表通过分类id进行关联，并显示两张表的所有列</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">   a.<span class="operator">*</span>,</span><br><span class="line">   b.<span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">   product <span class="keyword">as</span> a <span class="keyword">join</span> category <span class="keyword">as</span> b <span class="keyword">on</span> a.category_id <span class="operator">=</span> b.category_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702222803025.png" alt="image-20200702222803025"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  a.pname,</span><br><span class="line">  b.category_name</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  product a <span class="keyword">join</span> category b <span class="keyword">on</span> a.category_id <span class="operator">=</span> b.category_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702223043014.png" alt="image-20200702223043014"></p>
+</li>
+</ul>
+</li>
+<li><p>需求2：统计每个分类名称对应的商品个数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  b.category_name,</span><br><span class="line">  <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  product a <span class="keyword">join</span> category b <span class="keyword">on</span> a.category_id <span class="operator">=</span> b.category_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">  b.category_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702223505148.png" alt="image-20200702223505148"></p>
+</li>
+<li><p>需求3：统计除了吃的分类以外的所有分类的商品个数，并显示个数最多的前三个分类</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">   b.category_name,</span><br><span class="line">   <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> numb</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">   product a <span class="keyword">join</span> category b <span class="keyword">on</span> a.category_id <span class="operator">=</span> b.category_id</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">   b.category_name <span class="operator">!=</span> <span class="string">&#x27;吃的&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">   b.category_name</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">   numb <span class="keyword">desc</span></span><br><span class="line">limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702224023108.png" alt="image-20200702224023108"></p>
+</li>
+<li><p>分类</p>
+<ul>
+<li><p>inner join：内连接，inner可以省略</p>
+<ul>
+<li>关联条件中，两张表都有这个值，结果就有</li>
+<li>类似于集合中两个集合的交集</li>
+</ul>
+</li>
+<li><p>left outer join：左外连接，outer可以省略</p>
+<ul>
+<li><p>关联条件中，左表中有，结果就有</p>
+</li>
+<li><p>类似于集合中左表的全集</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">  a.pname,</span><br><span class="line">  b.category_name</span><br><span class="line">from</span><br><span class="line">  product a left join category b on a.category_id = b.category_id;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>左表是product，右表是category</li>
+<li>如果product表中有一条数据的category_id是c006，而category中没有</li>
+<li>结果有</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>right   outer join：右外连接，outer可以省略</p>
+<ul>
+<li><p>关联条件中，右表中有，结果就有</p>
+</li>
+<li><p>类似于集合中右表的全集</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">  a.pname,</span><br><span class="line">  b.category_name</span><br><span class="line">from</span><br><span class="line">  product a right join category b on a.category_id = b.category_id;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>左表是product，右表是category</li>
+<li>如果category表中有一条数据的category_id是c006，而product中没有</li>
+<li>结果有</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>full   join：全连接</p>
+<ul>
+<li>关联条件中，两张表任意一边有，结果就有</li>
+<li>类似于集合中的两张表全集</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、子查询"><a href="#3、子查询" class="headerlink" title="3、子查询"></a>3、子查询</h3><ul>
+<li><p>功能：在select语句中嵌套select语句</p>
+</li>
+<li><p>需求1：查询化妆品这个分类对应的所有商品信息</p>
+<ul>
+<li>分析结果长什么样？<ul>
+<li>所有商品信息：product</li>
+</ul>
+</li>
+<li>条件：化妆品这个分类对应的商品<ul>
+<li>化妆品：category</li>
+</ul>
+</li>
+<li>解决：先获取化妆品对应的分类id，然后根据分类id到商品表中查询这个分类id对应的商品</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select category_id from category where category_name = &#x27;化妆品&#x27;;</span><br><span class="line">select * from product where category_id = &#x27;c003&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>|</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from product where category_id = (select category_id from category where category_name = &#x27;化妆品&#x27;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>先执行内层的SQL语句</li>
+<li>然后执行外层的SQL语句</li>
+</ul>
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702230753367.png" alt="image-20200702230753367"></p>
+</li>
+<li><p>需求2：查询相宜本草对应的分类的名称</p>
+<ul>
+<li>结果：显示分类的 名称：category</li>
+<li>条件：相宜本草  pname：product</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--先查询相宜本草对应的分类id</span><br><span class="line">select category_id from product where pname = &#x27;相宜本草&#x27;;</span><br><span class="line">--根据分类id到分类表中查询分类的名称</span><br><span class="line">select category_name from category where category_id = &#x27;c003&#x27;;</span><br><span class="line">|</span><br><span class="line">select category_name from category where category_id = (select category_id from product where pname = &#x27;相宜本草&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL.assets/image-20200702231153230.png" alt="image-20200702231153230"></p>
+</li>
+<li><p>join与子查询的应用场景</p>
+<ul>
+<li>如果你的查询结果包含多张表的列<ul>
+<li>join</li>
+</ul>
+</li>
+<li>如果你的查询结果只有一张表的列，条件来自于别的表<ul>
+<li>子查询</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/13/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL/" data-id="cliuz86m30000k8ur9s039676" data-title="MySQL" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/06/14/Day02%EF%BC%9A%E5%8F%AF%E8%A7%86%E5%8C%96ETL%E5%B7%A5%E5%85%B7Kettle/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Kettle
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/06/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/14/Day02%EF%BC%9A%E5%8F%AF%E8%A7%86%E5%8C%96ETL%E5%B7%A5%E5%85%B7Kettle/">Kettle</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/13/Day01%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FMySQL/">MySQL</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/06/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 By Autoload<br>
+      Driven - <a href="https://hexo.io/" target="_blank">Hexo</a>|Theme - <a href="https://github.com/autoload/hexo-theme-auto" target="_blank">Auto</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
